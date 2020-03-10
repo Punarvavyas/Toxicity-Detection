@@ -3,15 +3,15 @@ from flask import Flask, request, render_template
 app = Flask(__name__)
 
 
-@app.route('/checktoxicity/', methods=['POST'])
-def check_toxicity():
-    text = request.form['text']
-    print(text)
-    return render_template('search.html', text=text)
-
 @app.route('/')
 def index():
     return render_template('search.html')
+
+@app.route('/report/', methods=['GET'])
+def report():
+    searchText = request.args.get('searchText')
+    print(searchText)
+    return render_template('report.html', text=searchText)
 
 @app.route('/analysis')
 def analysis():

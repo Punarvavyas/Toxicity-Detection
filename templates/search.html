@@ -2,7 +2,7 @@
 {% block body %}
 <div class="container">
     <h1>Toxicity Detection</h1>
-    <form class="input-group">
+    <form class="input-group" method="GET" action="/report">
         <input class="form-control" type="text" minlength="2" name="searchText" autocomplete="off" placeholder="Enter text to detect toxicity" required>
         <div class="input-group-append">
             <button class="btn btn-primary">Detect</button>
